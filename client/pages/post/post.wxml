@@ -1,0 +1,25 @@
+<!--pages/post/post.wxml-->
+<view>
+  <view class='info'>
+    <view class='info_classify'>
+      <text>分类</text>
+      <input bindblur="inputclassify" value="{{classify}}"></input>
+    </view>
+    <view class='info_classify'>
+      <text>内容</text>
+      <input bindblur="inputtextwords" value="{{textwords}}"></input>
+    </view>
+    
+      
+      <button class='upload_photo' bindtap='doUpload'>上传</button>
+    <view class='arrow'></view>
+    <view class='isUpload'>
+    <text wx:if="{{image}}">已上传</text>
+    <text wx:else>未上传</text>
+    </view>
+  </view>
+  <view class='info_classify'>
+   <button class='upload' bindtap='updatePost'>发布</button>
+  </view>
+</view>
+

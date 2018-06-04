@@ -1,0 +1,13 @@
+{
+	"client": "./client",
+	"svr": "./server",
+	"miniprogramRoot": "./client",
+	"qcloudRoot": "./server",
+	"setting": {
+		"newFeature": true
+	},
+	"appid": "wx429c8c4624435603",
+	"projectname": "iOUCi",
+	"libVersion": "2.0.9",
+	"condition": {}
+}

@@ -1,0 +1,6 @@
+<!--pages/me/me.wxml-->
+<view>
+  <view class='backWall'></view>
+    <image class="userinfo-avatar" src="{{userInfo.avatar}}" background-size="cover"></image>
+</view>
+

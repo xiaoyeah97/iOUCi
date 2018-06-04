@@ -1,0 +1,42 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/addCgi/addCgi",
+    "pages/me/me",
+    "pages/post/post",
+    "pages/showPost/showPost",
+    "pages/comment/comment",
+    "pages/showComment/showComment"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "iOUCi",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#666666",
+    "selectedColor": "#555555",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "image/news.png",
+        "selectedIconPath": "image/news@active.png"
+      },
+      {
+        "pagePath": "pages/post/post",
+        "text": "发布",
+        "iconPath": "image/index.png",
+        "selectedIconPath": "image/index@active.png"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "我",
+        "iconPath": "image/me.png",
+        "selectedIconPath": "image/me@active.png"
+      }
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+<!--pages/showComment/showComment.wxml-->
+<!-- <text>pages/showComment/showComment.wxml</text> -->
+<view>
+  <block wx:for="{{comment_details}}">
+  <!-- <textarea></textarea> -->
+    <image class="userinfo-iavatar" src="{{userInfo.iavatar}}" background-size="cover"></image>
+    <text class='nickname'>{{nickname.name}}</text>
+    <text class='comment_text'>{{comment_detials.comments}}</text>
+  </block>
+</view>

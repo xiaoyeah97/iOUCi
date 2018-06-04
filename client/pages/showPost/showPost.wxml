@@ -1,0 +1,9 @@
+<!--pages/showPost/showPost.wxml-->
+<view>
+    <image class="userinfo-iavatar" src="{{userInfo.iavatar}}" background-size="cover"></image>
+    <text class='nickname'>{{nickname.name}}</text>
+    <text class='post_text'>{{post_detials.post_texts}}</text>
+    <button class='upload' bindtap='showComment'>显示评论</button>
+</view>
+  
+
