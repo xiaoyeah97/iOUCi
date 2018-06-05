@@ -1,8 +1,6 @@
-// pages/showPost/showPost.js
+// pages/sqare/sqare.js
 var config = require('../../config')
-
 const app = getApp()
-
 Page({
 
   /**
@@ -13,45 +11,38 @@ Page({
     post_detials: {},
     nickname: {},
     comments: {},
-    pid: -1
+    //pid: ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
+  
   onLoad: function (options) {
     let uid
     if (app.globalData.userInfo) {
       uid = app.globalData.userInfo.uid
     }
-    this.setData({
-      pid: options.pid
-    })
-    console.log(this.data.pid)
+    //console.log(this.data.pid)
+    //显示贴子
     wx.request({
-      url: config.service.getPostUrl,
+      url: config.service.getAllPostUrl,
       method: 'get',
-      data: {
-        pid: this.data.pid,
-
-      },
+      // data: {
+      //   pid: this.data.pid,
+      // },
       success: res => {
         console.log(res)
         let data = res.data.data
-        this.setData({          
-          userInfo: data.userInfo,
-          post_detials: data.post_detials,
-          nickname: data.nickname
-        })  
-    },
+        this.setData({
+          //userInfo: data.userInfo,
+          post_details: data.post_detials,
+          //nickname: data.nickname
+        })
+      },
     })
   },
 
-  showComment: function(){
-  wx.navigateTo({
-    url: '../showComment/showCommet?pid=' + pid + '&type=' + 0,
-  })
-  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -64,7 +55,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+
   },
 
   /**
@@ -101,8 +92,4 @@ Page({
   onShareAppMessage: function () {
   
   }
-
-
-
-  
 })

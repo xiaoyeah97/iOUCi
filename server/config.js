@@ -21,7 +21,7 @@ const CONF = {
         port: 3306,
         user: 'root',
         db: 'iOUCi',
-        pass: 'wx429c8c4624435603',
+        pass: 'iouci2018',
         char: 'utf8mb4'
     },
 

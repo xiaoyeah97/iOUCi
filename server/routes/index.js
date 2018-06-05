@@ -45,4 +45,6 @@ router.get('/getPost', controllers.getPost)
 router.post('/updateComment', controllers.updateComment)
 //GET获取评论
 router.get('/getComment', controllers.getComment)
+//GET获取全部贴子
+router.get('/getAllPost', controllers.getAllPost)
 module.exports = router

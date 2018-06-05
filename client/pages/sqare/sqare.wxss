@@ -1,0 +1,5 @@
+/* pages/sqare/sqare.wxss */
+.post_text{
+  width: 100rpx;
+  height: 100rpx;
+}

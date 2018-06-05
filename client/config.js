@@ -42,7 +42,10 @@ var config = {
         updateCommentUrl: `${host}/weapp/updateComment`,
 
         //获取评论
-        getCommentUrl: `${host}/weapp/getComment`
+        getCommentUrl: `${host}/weapp/getComment`,
+
+        //获取全部贴子
+        getAllPostUrl: `${host}/weapp/getAllPost`,
     }
 };
 

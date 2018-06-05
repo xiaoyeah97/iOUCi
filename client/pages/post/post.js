@@ -181,6 +181,7 @@ Page({
         if (res.data.code == 0) {
           util.showSuccess('上传信息成功')
           let pid = res.data.data.res[0]
+          
           wx.redirectTo({
             url: '../showPost/showPost?pid=' + pid + '&type=' + 0,
           })
@@ -188,6 +189,12 @@ Page({
           util.showModel('上传信息失败', res.data.error)
         }
       }
+    })
+  },
+
+  backtoSqare: function(){
+    wx.redirectTo({
+      url: '../index/index',
     })
   },
 

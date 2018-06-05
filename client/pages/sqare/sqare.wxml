@@ -1,0 +1,10 @@
+<!--pages/sqare/sqare.wxml-->
+<!-- <text>pages/sqare/sqare.wxml</text> -->
+<view>
+   <block wx:for="{{post_details}}" wx:key="index"> 
+  <!-- <textarea></textarea> -->
+    <!-- <image class="userinfo-avatar" src="{{userInfo.avatar}}" background-size="cover"></image> -->
+    <!-- <text class='nickname'>{{nickname.name}}</text> -->
+    <view class='post_text'>{{item.textwords}}</view>
+   </block> 
+</view>
