@@ -16,7 +16,13 @@ Page({
     date: '',
     content_num: 0,
     like_num: 0,
-    times: 0
+    times: 0,
+    classifyArray:[
+      "找人/表白",
+      "寻物/招领",
+      "建议/吐槽",
+      "问询/咨询"
+    ]
   },
 
   /**
@@ -197,9 +203,12 @@ Page({
       url: '../index/index',
     })
   },
-
-  inputclassify: function (e) {
-    this.data.classify = e.detail.value
+  classifyPicker: function (e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+      this.data.classify=e.detail.value
+      this.setData({
+        index: e.detail.value
+      })
   },
   inputtextwords: function (e) {
     this.data.textwords = e.detail.value

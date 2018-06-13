@@ -1,0 +1,16 @@
+var classify = function(c){
+  if (c == "找人/表白"){
+    result=0
+  }
+  else if (c == "寻物/招领"){
+    result=1
+  }
+  else if (c == "建议/吐槽") {
+    result = 2
+  }
+  else if (c == "问询/咨询") {
+    result = 3
+  }
+  return result;
+}
+module.exports = classify

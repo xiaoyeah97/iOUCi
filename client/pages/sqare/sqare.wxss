@@ -1,5 +1,48 @@
-/* pages/sqare/sqare.wxss */
-.post_text{
-  width: 100rpx;
-  height: 100rpx;
+.post{
+  width: 100%;
+  display: flex;
+  background: #fff;
+  margin: 20rpx;
+  /* padding: 20rpx 10rpx; */
+}
+.avatar{
+  width: 100%;
+  height: 100%;
+}
+.post_avatar {
+    width: 100rpx;
+    height: 100rpx;
+    margin: 10rpx;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px #eee,
+    0 1px 2px 1px #efefef;
+}
+.post_words{
+  width: 80%;
+  height: 100%;
+  margin: 5rpx;
+  /* padding: 10rpx 10rpx; */
+}
+.nickname{
+  display: block;
+  font-size: 26rpx;
+  font-weight: 500rpx;
+}
+.textwords{
+  display: block;
+  font-size: 28rpx;
+  /* margin: 10rpx; */
+  /* padding: 10rpx 20rpx; */
+}
+.time{
+    position: absolute;
+    right: 30px;
+    display: inline-block; 
+    font-size: 26rpx;
+}
+.comment_line{
+  height: 1px;
+  background: #eee;
+  display: inline-block;
+  width: 100%;
 }

@@ -1,0 +1,37 @@
+/* component/post/post.wxss */
+.post{
+  width: 100%;
+  display: flex;
+  background: #fff;
+  padding: 20rpx 20rpx;
+}
+.avatar{
+  width: 20%;
+  height: 100%;
+}
+.userinfo-avatar {
+    width: 100rpx;
+    height: 100rpx;
+    margin: 20rpx;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px #eee,
+    0 1px 2px 1px #efefef;
+}
+.main{
+  width: 80%;
+  height: 100%;
+}
+.nickname{
+  display: inline-block;
+  font-size: 32rpx;
+  font-weight: 500rpx;
+}
+.date{
+  display: block;
+  font-size: 20rpx;
+  color: #999;
+}
+.textwords{
+  display: block;
+  font-size: 32rpx;
+}

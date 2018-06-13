@@ -1,1 +1,8 @@
 /* pages/post/post.wxss */
+ .info_text{
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  background: #fff;
+  margin: 20rpx;
+} 

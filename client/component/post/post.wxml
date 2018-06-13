@@ -1,0 +1,21 @@
+<!--component/post/post.wxml-->
+<view class='post'>
+  <view class='avatar'>
+    <image  class="userinfo-avatar"
+            src="{{post_detials.avatar_url}}"
+            background-size="cover"
+    ></image>
+  </view>
+  <view class='main'>
+    <text class='nickname'>{{post_detials.name}}</text>
+    <text class='date'>{{post_detials.date}}</text>
+    <text class='textwords'>{{post_detials.textwords}}</text>
+  </view>
+  <!-- <view class='photo'>
+    <image class="textphoto"
+            src="{{post_detials.textphoto}}"
+            background-size="cover">
+    </image>
+  </view> -->
+</view>
+

@@ -1,11 +1,16 @@
 <!--pages/post/post.wxml-->
+<view class="classify_section">
+  <view class="section__title">请选择分类</view>
+  <picker bindchange="classifyPicker" value="{{index}}" range="{{classifyArray}}">
+    <view class="picker">
+      当前选择：{{classifyArray[index]}}
+    </view>
+  </picker>
+</view>
+
 <view>
   <view class='info'>
-    <view class='info_classify'>
-      <text>分类</text>
-      <input bindblur="inputclassify" value="{{classify}}"></input>
-    </view>
-    <view class='info_classify'>
+    <view class='info_text'>
       <text>内容</text>
       <input bindblur="inputtextwords" value="{{textwords}}"></input>
     </view>

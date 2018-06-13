@@ -1,5 +1,6 @@
 // pages/sqare/sqare.js
 var config = require('../../config')
+var util = require('../../utils/util.js')
 const app = getApp()
 Page({
 
@@ -17,7 +18,19 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  
+  // onTapTag: function (e) {
+  //   var self = this;
+  //   var tab = e.currentTarget.id;
+  //   // 这里就能获取到不同的tab值了
+  //   self.setData({
+  //     tab: tab
+  //   });
+  //   if (tab !== 'all') {
+  //     this.fetchData({ tab: tab });
+  //   } else {
+  //     this.fetchData();
+  //   }
+  // },
   onLoad: function (options) {
     let uid
     if (app.globalData.userInfo) {
@@ -33,16 +46,25 @@ Page({
       // },
       success: res => {
         console.log(res)
+        //console.log(res.data.data.post_detials)
         let data = res.data.data
+        for (let item in data) {
+          // 处理时间格式
+          data[item].date = util.formatTime(new Date(data[item].date))
+        }
         this.setData({
-          //userInfo: data.userInfo,
-          post_details: data.post_detials,
-          //nickname: data.nickname
+          post_detials: data.post_detials,
         })
       },
     })
   },
-
+  toDetials:function(e){
+    let pid = e.currentTarget.dataset.pid
+    console.log(pid)
+    wx.navigateTo({
+      url: '../showPost/showPost?pid=' + pid + '&type=' + 0,
+    })
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
