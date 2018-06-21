@@ -1,5 +1,5 @@
 const { mysql } = require('../qcloud')
-
+//const app = getApp()
 module.exports = async ctx => {
   let classify = ctx.request.body.classify 
   let textwords = ctx.request.body.textwords 
@@ -8,11 +8,12 @@ module.exports = async ctx => {
   let like_num = ctx.request.body.like_num 
   let date = ctx.request.body.date ? ctx.request.body.date : ''
   let uid = ctx.request.body.uid ? ctx.request.body.uid : ''
+  //let num = await mysql("nickname").count('nid')
 
   //let nid = ctx.query.nid ? ctx.query.nid : ''
   //let times = ctx.query.times ? ctx.query.times : ''
   //let length = await mysql("nickname").count("nid")
-  let nid = Math.floor(Math.random()*3+1)
+  let nid = Math.floor(Math.random() *100+1)
   //let resnid = await mysql.raw('SELECT nid FROM nickname WHERE times in ( SELECT MIN(times) FROM nickname GROUP BY times) ORDER BY nid LIMIT 1')
     let post ={
       classify: classify,

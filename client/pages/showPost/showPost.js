@@ -1,6 +1,6 @@
 // pages/showPost/showPost.js
 var config = require('../../config')
-
+var util = require('../../utils/util.js')
 const app = getApp()
 
 Page({
@@ -12,8 +12,11 @@ Page({
     userInfo: {},
     post_detials: {},
     nickname: {},
-    comments: {},
-    pid: -1
+    comments: '',
+    pid: -1,
+    uid:-1,
+    like_state:0,
+    likes: {}
   },
 
   /**
@@ -25,9 +28,11 @@ Page({
       uid = app.globalData.userInfo.uid
     }
     this.setData({
-      pid: options.pid
+      pid: options.pid,
+      uid:uid
     })
     console.log(this.data.pid)
+
     wx.request({
       url: config.service.getPostUrl,
       method: 'get',
@@ -38,6 +43,9 @@ Page({
       success: res => {
         console.log(res)
         let data = res.data.data
+        for(let item in data){
+        data[item].date = util.formatTime(new Date(data[item].date))
+      }
         this.setData({          
           userInfo: data.userInfo,
           post_detials: data.post_detials,
@@ -45,14 +53,157 @@ Page({
         })  
     },
     })
-  },
 
-  showComment: function(){
-  wx.navigateTo({
-    url: '../showComment/showCommet?pid=' + pid + '&type=' + 0,
-  })
+    wx.request({
+      url: config.service.getCommentUrl,
+      method: 'get',
+      data:{
+        pid:this.data.pid,
+      },
+      success: res => {
+        //console.log(this.data.pid)
+        console.log(res)
+        let data = res.data.data[0]
+        console.log(data)
+        this.setData({
+          comments:data
+        })
+      }
+    })
+    wx.request({
+      url: config.service.getlikeUrl,
+      method: 'get',
+      data: {
+        pid: this.data.pid,
+        uid: this.data.uid
+      },
+      success: res => {
+        console.log(this.data)
+        console.log(res)
+        this.setData({
+          like_state: res.data.data.like_state
+        })
+      }
+    })
+    wx.request({
+      url: config.service.getAllLikeUrl,
+      method:'get',
+      data:{
+        pid: this.data.pid,
+      },
+      success: res=>{
+        console.log(res)
+        this.setData({
+          likes:res.data.data.likes
+        })
+      }
+    })
   },
+  
+  toComment: function (e) {
+    let pid = e.currentTarget.dataset.pid
+    console.log(pid)
+    wx.navigateTo({
+      url: '../comment/comment?pid=' + pid + '&type=' + 0,
+    })
+  },
+  tolike: function (e) {
+    let pid = e.currentTarget.dataset.pid
+    let uid
+    if (app.globalData.userInfo) {
+      uid = app.globalData.userInfo.uid
+    }
 
+    wx.request({
+      url: config.service.updatelikeUrl,
+      method: 'post',
+      data: {
+        pid: this.data.pid,
+        uid: uid
+      },
+      success: res => {
+        console.log(res)
+      }
+    })
+
+    wx.request({
+      url: config.service.getlikeUrl,
+      method: 'get',
+      data: {
+        pid: this.data.pid,
+        uid: this.data.uid
+      },
+      success: res => {
+        console.log(res)
+        this.setData({
+          like_state: res.data.data.like_state,
+          //likes: res.data.data.likes
+        })
+      }
+    })
+
+    wx.request({
+      url: config.service.getAllLikeUrl,
+      method: 'get',
+      data: {
+        pid: this.data.pid,
+      },
+      success: res => {
+        console.log(res)
+        this.setData({
+          likes: res.data.data.likes
+        })
+      }
+    })
+  },
+  dellike: function(e){
+    let pid = e.currentTarget.dataset.pid
+    let uid
+    if (app.globalData.userInfo) {
+      uid = app.globalData.userInfo.uid
+    }
+
+    wx.request({
+      url: config.service.updateDroplikeUrl,
+      method: 'post',
+      data: {
+        pid: this.data.pid,
+        uid: uid
+      },
+      success: res => {
+        console.log(res)
+      }
+    })
+
+    wx.request({
+      url: config.service.getlikeUrl,
+      method: 'get',
+      data: {
+        pid: this.data.pid,
+        uid: this.data.uid
+      },
+      success: res => {
+        console.log(res)
+        this.setData({
+          like_state: res.data.data.like_state,
+          //likes: res.data.data.likes
+        })
+      }
+    })
+    wx.request({
+      url: config.service.getAllLikeUrl,
+      method: 'get',
+      data: {
+        pid: this.data.pid,
+      },
+      success: res => {
+        console.log(res)
+        this.setData({
+          likes: res.data.data.likes
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

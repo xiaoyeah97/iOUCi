@@ -1,0 +1,30 @@
+<!--pages/chooseImg/chooseImg.wxml-->
+
+<view class='choose_iavatar' >
+  <text>请选择一个你喜欢的头像( •̀ ω •́ )✧</text>
+  <view class='choose_iavatar_gender'>
+     <view class='line_iavatar'>
+        <image class='iavatar' src="{{iavatar_group[0].iavatar}}" bindtap='getImg' data-iavatar="{{iavatar_group[0].iavatar}}"></image>
+        <image class='choose_it' src='/image/check.png' wx:if="{{iavatar == iavatar_group[0].iavatar}}"></image>
+        <image class='iavatar' src="{{iavatar_group[1].iavatar}}" bindtap='getImg' data-iavatar="{{iavatar_group[1].iavatar}}"></image>
+        <image class='choose_it' src='/image/check.png' wx:if="{{iavatar == iavatar_group[1].iavatar}}"></image>
+        <image class='iavatar' src="{{iavatar_group[2].iavatar}}" bindtap='getImg' data-iavatar="{{iavatar_group[2].iavatar}}"></image>
+        <image class='choose_it' src='/image/check.png' wx:if="{{iavatar == iavatar_group[2].iavatar}}"></image>
+        <image class='iavatar' src="{{iavatar_group[3].iavatar}}" bindtap='getImg' data-iavatar="{{iavatar_group[3].iavatar}}"></image>
+        <image class='choose_it' src='/image/check.png' wx:if="{{iavatar == iavatar_group[3].iavatar}}"></image>
+        <image class='iavatar' src="{{iavatar_group[4].iavatar}}" bindtap='getImg' data-iavatar="{{iavatar_group[4].iavatar}}"></image>
+        <image class='choose_it' src='/image/check.png' wx:if="{{iavatar == iavatar_group[4].iavatar}}"></image>
+        <image class='iavatar' src="{{iavatar_group[5].iavatar}}" bindtap='getImg' data-iavatar="{{iavatar_group[5].iavatar}}"></image>
+        <image class='choose_it' src='/image/check.png' wx:if="{{iavatar == iavatar_group[5].iavatar}}"></image>
+        <image class='iavatar' src="{{iavatar_group[6].iavatar}}" bindtap='getImg' data-iavatar="{{iavatar_group[6].iavatar}}"></image>
+        <image class='choose_it' src='/image/check.png' wx:if="{{iavatar == iavatar_group[6].iavatar}}"></image>
+        <image class='iavatar' src="{{iavatar_group[7].iavatar}}" bindtap='getImg' data-iavatar="{{iavatar_group[7].iavatar}}"></image>
+        <image class='choose_it' src='/image/check.png' wx:if="{{iavatar == iavatar_group[7].iavatar}}"></image>
+        <image class='iavatar' src="{{iavatar_group[8].iavatar}}" bindtap='getImg' data-iavatar="{{iavatar_group[8].iavatar}}"></image>
+        <image class='choose_it' src='/image/check.png' wx:if="{{iavatar == iavatar_group[8].iavatar}}"></image>
+        <image class='iavatar' src="{{iavatar_group[9].iavatar}}" bindtap='getImg' data-iavatar="{{iavatar_group[9].iavatar}}"></image>
+        <image class='choose_it' src='/image/check.png' wx:if="{{iavatar == iavatar_group[9].iavatar}}"></image>                 
+    </view> 
+  </view>
+  <button class='update' bindtap='updateImg'>选好啦U•ェ•*U</button>
+</view>

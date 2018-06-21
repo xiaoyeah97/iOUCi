@@ -8,10 +8,12 @@ module.exports = async ctx => {
   let nid = post_detials.nid
   let userInfo = await mysql("user").where({ uid }).first()
   let nickname = await mysql("nickname").where({ nid }).first()
+  let comments = await mysql("comment").where({ pid }).first()
   
   ctx.state.data ={
     post_detials: post_detials,
     userInfo: userInfo,
-    nickname: nickname
+    nickname: nickname,
+    comments: comments
   }
 }

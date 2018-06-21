@@ -1,0 +1,16 @@
+<wxs module='format' src='../../component/date.wxs' />
+  <view class='post_main'>
+      <block wx:for="{{post_detials}}" wx:key="index" wx:for-index="i">
+        <view class='post' bindtap="toDetials" data-pid="{{post_detials[i].pid}}">
+          <view class='post_avatar'>
+            <image class='avatar' src='{{post_detials[i].iavatar}}'></image>
+          </view>
+          <view class='post_words'>
+            <text class='nickname' >{{post_detials[i].name}}</text>
+            <text class='textwords'>{{post_detials[i].textwords}}</text>
+            <text class='time'>{{format(post_detials[i].date)}}</text>
+          </view>
+        </view>
+        <view class="comment_line"></view>
+      </block>
+  </view>

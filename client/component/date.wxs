@@ -1,4 +1,6 @@
 var format = function (t) {
+
+
   var date = getDate(t) // t = '2017-09-19 12:10:00'
   var dateTimeStamp = date.getTime()
   var minute = 1000 * 60;

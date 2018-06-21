@@ -1,1 +1,157 @@
 /* pages/showPost/showPost.wxss */
+.post_page{
+  /* background: #fff; */
+  height: 1200rpx;
+  margin: 30rpx;  
+}
+.userinfo-iavatar {
+  width: 150rpx;
+  height: 150rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+  position: relative;
+  top: 0rpx;
+  left:0rpx;
+  /* box-shadow: 0 0 0 1px #eee,
+    0 1px 2px 1px #efefef; */
+}
+.nickname{
+  position: relative;
+  top:-120rpx;
+  left:50rpx;
+  font-size: 32rpx;
+  color: #A9664A;
+}
+.date{
+  position: relative;
+  top:-100rpx;
+  left:250rpx;
+  font-size: 28rpx;
+}
+.post_text{
+  position: absolute;
+  top:230rpx;
+  left:40rpx;
+  font-size: 32rpx;
+}
+.show_photo{
+  /* padding-bottom:100%; */
+  display: block;
+  position: relative;
+  top:50rpx;
+} 
+.textphoto{
+  padding: 20rpx;
+  width: 650rpx;
+}
+
+.make-topic {
+	position: fixed;
+	right: 40rpx;
+	bottom: 150rpx;
+	width: 100rpx;
+	height: 100rpx;
+	padding: 25rpx;
+	text-align: center;
+	box-shadow: 0 2rpx 6rpx rgba(0, 0, 0, .3);
+	background-color: rgba(0, 0, 0, .4);
+	border-radius: 50%;
+	font-size: 0;
+	box-sizing: border-box;
+	transition: all cubic-bezier(.6, 1.01, 1, 1) .3s;
+}
+.make-topic image {
+	width: 50rpx;
+	height: 50rpx;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+.show_comments{
+  display: block;
+  text-align: center;
+  position: relative;
+  top: 30rpx;
+}
+.comments_number{
+  position: relative;
+  top: 30rpx;
+}
+.comment_line{
+  height: 1px;
+  background: #eee;
+  display: inline-block;
+  width: 100%;
+}
+.avatar{
+  width: 100%;
+  height: 100%;
+}
+.post_avatar {
+    width: 100rpx;
+    height: 100rpx;
+    margin: 10rpx;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px #eee,
+    0 1px 2px 1px #efefef;
+}
+.post_words{
+  width: 80%;
+  height: 100%;
+  margin: 5rpx;
+  /* background: #fff; */
+  /* padding: 10rpx 10rpx; */
+}
+.nick_name{
+  display: block;
+  font-size: 26rpx;
+  font-weight: 500rpx;
+  position: relative;
+  top: -100rpx;
+  left: -100rpx;
+}
+.textwords{
+  display: block;
+  position: relative;
+  left: -60rpx;
+  top: -60rpx;
+  font-size: 28rpx;
+  /* margin: 10rpx; */
+  /* padding: 10rpx 20rpx; */
+}
+.time{
+    position: relative;
+    top: 0rpx;
+    left: 300rpx;
+    display: inline-block; 
+    font-size: 26rpx;
+}
+.nocomment{
+  position:  relative;
+  top: 20 rpx;
+  left: 0 rpx;
+}
+
+.comment_num{
+  position: relative;
+  top: 8rpx;
+  left: 30rpx;
+  font-size: 25rpx;
+}
+.like_img{
+  position: relative;
+   top: -25rpx; 
+  left: 0rpx;
+  width:42rpx;
+  height: 42rpx;
+}
+.comment_img{
+  position: relative;
+  top: -20rpx;
+  left: -60rpx;
+  width:42rpx;
+  height: 42rpx;
+}

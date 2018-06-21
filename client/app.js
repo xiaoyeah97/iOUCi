@@ -3,11 +3,14 @@ var qcloud = require('./vendor/wafer2-client-sdk/index')
 var config = require('./config')
 var util = require('./utils/util.js')
 
+
+
 App({
+
+
   onLaunch: function () {
     qcloud.setLoginUrl(config.service.loginUrl)
     // 用户登陆
-
     if (this.globalData.logged) return
     util.showBusy('正在登录')
     var that = this
@@ -30,11 +33,13 @@ App({
                 gender: data.gender
               },
               success: res => {
-                console.log(res.data)
+                console.log(res)
+                //if(res.data.data.userInfo.iavatar==null)
                 that.globalData.userInfo = res.data.data.userInfo
                 that.globalData.logged = true
               }
             })
+          
           },
           fail(error) {
             util.showModel('请求失败', error)
@@ -52,5 +57,6 @@ App({
   globalData: {
     userInfo: {},
     logged: false,
+    nickname_num: 3,
   }
 })

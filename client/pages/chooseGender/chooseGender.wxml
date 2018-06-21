@@ -1,0 +1,17 @@
+<!--pages/chooseGender/chooseGender.wxml-->
+<view class='choose_gender'>
+  <text class='text'>请先完善你的信息(●'◡'●)</text>
+  <text class='text'>我是...</text>
+  <view class='choose'>
+    <!-- <image class='gender' url='/image/boy.png'></image> -->
+    <text class='gender_text' bindtap='getboyGender'>男孩纸</text>
+     <image class='gender' src='/image/boy.png'></image> 
+  </view>
+  <view class='line'></view>
+  <view class='choose'>
+    <!-- <image class='gender' url='/image/girl.png'></image> -->
+    <text class='gender_text' bindtap='getgirlGender'>女孩纸</text>
+    <image class='gender' src='/image/girl.png' ></image>
+  </view>
+</view>
+

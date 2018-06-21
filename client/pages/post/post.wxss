@@ -6,3 +6,10 @@
   background: #fff;
   margin: 20rpx;
 } 
+.page_post{
+  margin:20rpx;
+  background: #fff;
+}
+.upload{
+  background:#ffc59b;
+}

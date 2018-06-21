@@ -1,39 +1,19 @@
-<!--index.wxml-->
-<view class="container">
-    <!-- 用户登录测试 -->
-    <view class="userinfo">
-        <image
-            class="userinfo-avatar"
-            src="{{logged ? userInfo.avatarUrl : './user-unlogin.png'}}"
-            background-size="cover"
-        ></image>
-        <view>
-            <button class="userinfo-nickname" wx:if="{{!logged}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">点击测试登录接口</button>
-            <text class="userinfo-nickname" wx:else>{{userInfo.nickName}}</text>
+<wxs module='format' src='../../component/date.wxs' />
+  <view class='post_main'>
+      <block wx:for="{{post_detials}}" wx:key="index" wx:for-index="i">
+        <view class='post' bindtap="toDetials" data-pid="{{post_detials[i].pid}}">
+          <view class='post_avatar'>
+            <image class='avatar' src='{{post_detials[i].iavatar}}'></image>
+          </view>
+          <view class='post_words'>
+            <text class='nickname' >{{post_detials[i].name}}</text>
+            <text class='textwords'>{{post_detials[i].textwords}}</text>
+            <text class='time'>{{format(post_detials[i].date)}}</text>
+          </view>
         </view>
+        <view class="comment_line"></view>
+      </block>
+    <view class='make-topic' bindtap="refresh">
+      <image src='/image/f5.png'></image>
     </view>
-
-
-    <!-- 上传图片测试 -->
-    <view class="uploader">
-        <view class="uploader-text" bindtap="doUpload">
-            <text>上传图片</text>
-        </view>
-        <view class="uploader-container" wx:if="{{imgUrl}}">
-            <image
-                class="uploader-image"
-                src="{{imgUrl}}"
-                mode="aspectFit"
-                bindtap="previewImg"
-            ></image>
-        </view>
-    </view>
-
-
-    <!-- 上传图片测试 -->
-    <view class="uploader">
-        <navigator url="../me/me" open-type="navigate" class="uploader-text">
-            <text>me</text>
-        </navigator>
-    </view>
-</view>
+  </view>

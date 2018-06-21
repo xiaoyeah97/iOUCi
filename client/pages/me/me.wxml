@@ -2,6 +2,10 @@
 <view>
   <view class='backWall'></view>
     <image class="userinfo-avatar" src="{{userInfo.avatar}}" background-size="cover"></image>
-    <view></view>
+    <image class="userinfo-iavatar" bindtap="changeImg" data-gender="{{userInfo.gender}}" src="{{userInfo.iavatar}}" background-size="cover"></image>
 </view>
-
+  <view class="me_list">
+    <item title="我的贴子" bindtap="tomypost"></item>
+    <view class='line'></view>
+    <item title="我的评论" bindtap="tomycomment"></item>
+  </view>

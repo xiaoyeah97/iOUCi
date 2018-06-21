@@ -1,14 +1,19 @@
 const { mysql } = require('../qcloud')
-
+//const app = getApp()
 module.exports = async ctx => {
   let text_comm = ctx.request.body.text_comm
   let uid = ctx.request.body.uid
-  //let nid = ctx.request.body.nid
+  let nid 
   let pid = ctx.request.body.pid
   let time = ctx.request.body.time
-
-  let nid = Math.floor(Math.random() * 3 + 1)
-
+  let post = await mysql("post").where({ pid }).first()
+  //let num = await mysql("nickname").count('nid')
+  //let uid_pid = post.uid
+  if(post.uid==uid){
+    nid = post.nid
+  }
+  else{
+    nid = Math.floor(Math.random() * 100 + 1)}
   let comment={
     text_comm : text_comm,
     uid : uid,

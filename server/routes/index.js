@@ -35,10 +35,6 @@ router.post('/message', controllers.message.post)
 router.get('/userInfo', controllers.userInfo)
 //POST 上传贴子
 router.post('/updatePost',controllers.updatePost)
-//GET获取用户匿名昵称
-router.get('/getNickname', controllers.getNickname)
-//POST改变nickname表里times
-router.post('/setNickname_time', controllers.setNickname_time)
 //GET获取贴子
 router.get('/getPost', controllers.getPost)
 //POST 发表评论
@@ -47,4 +43,19 @@ router.post('/updateComment', controllers.updateComment)
 router.get('/getComment', controllers.getComment)
 //GET获取全部贴子
 router.get('/getAllPost', controllers.getAllPost)
+//GET获取我的贴子
+router.get('/getMypost', controllers.getMypost)
+//GET获取我的评论
+router.get('/getMycomment', controllers.getMycomment)
+//POST 增加点赞
+router.post('/updatelike', controllers.updatelike)
+//POST 取消点赞
+router.post('/updateDroplike', controllers.updateDroplike)
+//GET 获取点赞信息
+router.get('/getlike', controllers.getlike)
+//GET 获取所有点赞信息
+router.get('/getAllLike', controllers.getAllLike)
+//GET 获取头像信息
+router.get('/getAvatar', controllers.getAvatar)
+router.post('/updateAvatar', controllers.updateAvatar)
 module.exports = router

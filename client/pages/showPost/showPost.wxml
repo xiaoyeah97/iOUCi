@@ -1,10 +1,52 @@
 <!--pages/showPost/showPost.wxml-->
-<view>
-    <image class="userinfo-iavatar" src="{{userInfo.avatar}}" background-size="cover"></image>
-    <text class='nickname'>{{nickname.name}}</text>
-    <text class='post_text'>{{post_detials.textwords}}</text>
-    
-    <button class='upload' bindtap='showComment'>显示评论</button>
-</view>
-  
+<wxs module='format' src='../../component/date.wxs' />
+ <scroll-view scroll-y='{{ true }}' scroll-into-view='{{ toView }}' style='height: {{ winHeight }}px'>  
+  <view class='post_page'>
+    <view class='user&words'>
+      <image class="userinfo-iavatar" src="{{userInfo.iavatar}}" background-size="cover"></image>
+      <text class='nickname'>{{nickname.name}}</text>
+      <text class='date'>{{format(post_detials.date)}}</text>
+      <text class='post_text'>{{post_detials.textwords}}</text>
+      <image class='comment_img' src='/image/reply.png' bindtap='tocomment' data-pid="{{post_detials[i].pid}}"></image>
+      <text class='comment_num'>{{comment_num[i].c}}</text>
+      <image class='like_img' src='/image/zan.png' wx:if="{{like_state == 0}}" bindtap='tolike' data-pid="{{post_detials[i].pid}}"></image> 
+      <image class='like_img' src='/image/zanhl.png' wx:if="{{like_state == 1}}" bindtap='dellike' data-pid="{{post_detials[i].pid}}"></image>
+      <text class='like_num'> {{likes.length}}</text>     
+    </view>
+  <view class='show_photo'>
+    <view wx:if="{{post_detials.textphoto}}">
+      <view class='post_textphoto'>
+        <image mode='widthFix' class='textphoto'src="{{post_detials.textphoto}}"      background-size="cover">
+        </image>
+      </view>
+    </view>
+    <view wx:else></view>
+  </view>
+  <view class='show_comments'>
+    <view class='comments_number'>
+        <text class='tag'>用户评论({{comments.length}})</text>
+      </view>
+      <view class="comment_line"></view>
+      <view wx:if="{{comments.length}}">
+        <block wx:for="{{comments}}" wx:key="index" wx:for-index="i">
+            <view class='post_avatar'>
+              <image class='avatar' src='{{comments[i].iavatar}}'></image>
+            </view>
+            <view class='post_words'>
+              <text class='nick_name' >{{comments[i].name}}</text>
+              <text class='textwords'>{{comments[i].text_comm}}</text>    
+              <text class='time'>{{format(comments[i].time)}}</text>
+            </view>
+          <view class="comment_line"></view>
+        </block>
+      </view>
+      <view class='nocomment' wx:else>
+        <text>还没有评论哦（；´д｀）ゞ</text>
+      </view>
+    </view>
+  </view>
+  <view class='make-topic' bindtap="toComment" data-pid="{{post_detials.pid}}">
+    <image src='/image/edit.png'></image>
+  </view>
+ </scroll-view> 
 

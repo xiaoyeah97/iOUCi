@@ -1,0 +1,4 @@
+<!--pages/updateAvatar/updateAvatar.wxml-->
+<!-- <text>pages/updateAvatar/updateAvatar.wxml</text> -->
+<button bindtap='chooseImage'>上传</button>
+<button bindtap='update'>发布</button>

@@ -8,6 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    userInfo:{},
     classify: '',
     textwords: '',
     textphoto: '',
@@ -29,6 +30,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    if (app.globalData.userInfo.iavatar ==null) {
+      //console.log(res.data.data.userInfo.iavatar)
+      wx.navigateTo({
+        url: '../chooseGender/chooseGender',
+      })
+    }
   
   },
 
@@ -75,13 +82,25 @@ Page({
   },
 
 
-  // 上传图片接口
-  doUpload: function () {
+  // chooseImage: function (e) {
+  //   var that = this;
+  //   wx.chooseImage({
+  //     sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+  //     sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+  //     success: function (res) {
+  //       // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
+  //       that.setData({
+  //         textphoto: that.data.textphoto.concat(res.tempFilePaths)
+  //       });
+  //     }
+  //   })
+  // },
+  chooseImage: function () {
     var that = this
-
-    // 选择图片 
+    
+    // 选择图片
     wx.chooseImage({
-      count: 9,
+      count: 1,
       sizeType: ['compressed'],
       sourceType: ['album', 'camera'],
       success: function (res) {
@@ -99,6 +118,7 @@ Page({
             console.log(res)
             res = JSON.parse(res.data)
             console.log(res)
+            //console.log(this.data.textphoto)
             that.setData({
               textphoto: res.data.imgUrl
             })
@@ -115,15 +135,19 @@ Page({
       }
     })
   },
-
-  // 预览图片
-  previewImg: function () {
+  // previewImage: function (e) {
+  //   wx.previewImage({
+  //     current: e.currentTarget.id, // 当前显示图片的http链接
+  //     urls: this.data.textphoto // 需要预览的图片http链接列表
+  //   })
+  // },
+  previewImage: function (e) {
+    //console.log(this.data.textphoto)
     wx.previewImage({
-      current: this.data.image,
-      urls: [this.data.image]
+      current: e.currentTarget.id,
+      urls: [this.data.textphoto]
     })
   },
-  
   // settimes:function(){
   //   wx.request({
   //     url: config.service.setNickname_timeUrl,
@@ -169,6 +193,7 @@ Page({
     console.log(this.data.nid)
     let date = util.formatTime(new Date())
     console.log(date)
+    console.log(this.data.textwords)
     wx.request({
       url: config.service.updatePostUrl,
       method: 'post',
@@ -187,9 +212,8 @@ Page({
         if (res.data.code == 0) {
           util.showSuccess('上传信息成功')
           let pid = res.data.data.res[0]
-          
-          wx.redirectTo({
-            url: '../showPost/showPost?pid=' + pid + '&type=' + 0,
+          wx.switchTab({
+            url: '../index/index',
           })
         } else {
           util.showModel('上传信息失败', res.data.error)
@@ -200,7 +224,7 @@ Page({
 
   backtoSqare: function(){
     wx.redirectTo({
-      url: '../index/index',
+      url: '../index/index'+0,
     })
   },
   classifyPicker: function (e) {
@@ -211,7 +235,9 @@ Page({
       })
   },
   inputtextwords: function (e) {
+    //console.log(e.detail.value)
     this.data.textwords = e.detail.value
+    //console.log(this.data.textwords)
   }, 
 
   /**

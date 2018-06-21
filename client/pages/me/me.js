@@ -16,11 +16,29 @@ Page({
    */
   onLoad: function (options) {
     if (app.globalData.userInfo) {
-      console.log(app.globalData.userInfo)
+      //console.log(app.globalData.userInfo)
       this.setData({
         userInfo: app.globalData.userInfo
       })
     }
+  },
+
+  changeImg: function(e){
+    let gender = e.currentTarget.dataset.gender
+    wx.navigateTo({
+      url: '../chooseImg/chooseImg?gender=' + gender + '&type=' + 0,
+    })
+  },
+
+  tomypost:function(){
+    wx.navigateTo({
+      url: '../mypost/mypost',
+    })
+  },
+  tomycomment: function () {
+    wx.navigateTo({
+      url: '../mycomment/mycomment',
+    })
   },
 
   /**

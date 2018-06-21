@@ -29,12 +29,6 @@ var config = {
         //上传贴子接口
         updatePostUrl: `${host}/weapp/updatePost`,
 
-        //获取匿名昵称接口
-        getNicknameUrl: `${host}/weapp/getNickname`,
-
-        //改变nickname表里times
-        setNickname_timeUrl: `${host}/weapp/setNickname_time`,
-
         //获取贴子
         getPostUrl: `${host}/weapp/getPost`,
 
@@ -46,6 +40,29 @@ var config = {
 
         //获取全部贴子
         getAllPostUrl: `${host}/weapp/getAllPost`,
+
+        //获取我的贴子
+        getMypostUrl: `${host}/weapp/getMypost`,
+
+        //获取我的评论
+        getMycommentUrl: `${host}/weapp/getMycomment`,
+        
+        //增加赞接口
+        updatelikeUrl: `${host}/weapp/updatelike`,
+
+        //取消赞接口
+        updateDroplikeUrl: `${host}/weapp/updateDroplike`,
+
+        //获取点赞信息
+        getlikeUrl: `${host}/weapp/getlike`,
+
+        //获取全部点赞信息
+        getAllLikeUrl: `${host}/weapp/getAllLike`,
+
+        //获取头像信息
+        getAvatarUrl: `${host}/weapp/getAvatar`,
+
+        updateAvatarUrl: `${host}/weapp/updateAvatar`,
     }
 };
 
