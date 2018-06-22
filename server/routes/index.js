@@ -43,6 +43,8 @@ router.post('/updateComment', controllers.updateComment)
 router.get('/getComment', controllers.getComment)
 //GET获取全部贴子
 router.get('/getAllPost', controllers.getAllPost)
+//GET按照分类获取贴子
+router.get('/getClassPost', controllers.getClassPost)
 //GET获取我的贴子
 router.get('/getMypost', controllers.getMypost)
 //GET获取我的评论

@@ -11,7 +11,8 @@
     "pages/updateAvatar/updateAvatar",
     "pages/chooseGender/chooseGender",
     "pages/mypost/mypost",
-    "pages/mycomment/mycomment"
+    "pages/mycomment/mycomment",
+    "pages/postClassify/postClassify"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

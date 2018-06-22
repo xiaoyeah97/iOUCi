@@ -41,6 +41,9 @@ var config = {
         //获取全部贴子
         getAllPostUrl: `${host}/weapp/getAllPost`,
 
+        //按照分类获取贴子
+        getClassPostUrl: `${host}/weapp/getClassPost`,
+
         //获取我的贴子
         getMypostUrl: `${host}/weapp/getMypost`,
 

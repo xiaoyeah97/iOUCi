@@ -154,22 +154,14 @@ Page({
       }
     })
   },
-
-
-getClassify(c){
-  let post = this.data.post_detials
-  let post_classify
-  for (let item in post) {
-    if(post[item].classify==c){
-      post_classify[item]=post[item]
-    }
-  }
-  this.setData({
-    post_classify: post_classify
+toclassify(e){
+  let classify = e.currentTarget.dataset.classify
+  wx.navigateTo({
+    url: '../postClassify/postClassify?classify=' + classify + '&type=' + 0,
   })
-  console.log(c)
-  console.log(this.data.post_classify)
 },
+
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成

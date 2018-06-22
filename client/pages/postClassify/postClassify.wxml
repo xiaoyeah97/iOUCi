@@ -1,11 +1,7 @@
 <wxs module='format' src='../../component/date.wxs' />
   <view class='post_main'>
-    <view class='choose_classify'>
-      <!-- <image class='png' src='/image/all.png'></image> -->
-      <image class='png' src='/image/zrbb.png' bindtap="toclassify" data-classify="0"></image>
-      <image class='png' src='/image/xwzl.png' bindtap="toclassify" data-classify="1"></image>
-      <image class='png' src='/image/jytc.png' bindtap="toclassify" data-classify="2"></image>
-      <image class='png' src='/image/wxzx.png' bindtap="toclassify" data-classify="3"></image>
+    <view class='nopost' wx:if="{{post_detials.length==0}}">
+      <text class='nopost_words'>还没有帖子呢...你来发一个吧</text>  
     </view>
       <block wx:for="{{post_detials}}" wx:key="index" wx:for-index="i">
         <view class='post' bindtap="toDetials" data-pid="{{post_detials[i].pid}}">
