@@ -1,46 +1,72 @@
 <!--pages/showPost/showPost.wxml-->
 <wxs module='format' src='../../component/date.wxs' />
- <scroll-view scroll-y='{{ true }}' scroll-into-view='{{ toView }}' style='height: {{ winHeight }}px'>  
+<scroll-view scroll-y='{{ true }}' scroll-into-view='{{ toView }}' style='height: {{ winHeight }}px'>  
   <view class='post_page'>
-    <view class='user&words'>
-      <image class="userinfo-iavatar" src="{{userInfo.iavatar}}" background-size="cover"></image>
-      <text class='nickname'>{{nickname.name}}</text>
-      <image class='classify_img' src='/image/zrbb1.png'wx:if="{{post_detials.classify==0}}"></image>
-      <image class='classify_img' src='/image/xwzl1.png'wx:if="{{post_detials.classify==1}}"></image>
-      <image class='classify_img' src='/image/jytc1.png'wx:if="{{post_detials.classify==2}}"></image>
-      <image class='classify_img' src='/image/wxzx1.png'wx:if="{{post_detials.classify==3}}"></image>
-      <text class='date'>{{format(post_detials.date)}}</text>
-      <text class='post_text'>{{post_detials.textwords}}</text>
-      <image class='comment_img' src='/image/reply.png' bindtap='tocomment' data-pid="{{post_detials[i].pid}}"></image>
-      <text class='comment_num'>{{comment_num[i].c}}</text>
-      <image class='like_img' src='/image/zan.png' wx:if="{{like_state == 0}}" bindtap='tolike' data-pid="{{post_detials[i].pid}}"></image> 
-      <image class='like_img' src='/image/zanhl.png' wx:if="{{like_state == 1}}" bindtap='dellike' data-pid="{{post_detials[i].pid}}"></image>
-      <text class='like_num'> {{likes.length}}</text>     
-    </view>
-  <view class='show_photo'>
-    <view wx:if="{{post_detials.textphoto}}">
-      <view class='post_textphoto'>
-        <image mode='widthFix' class='textphoto'src="{{post_detials.textphoto}}"      background-size="cover">
-        </image>
+    <view class='user_words'>
+      <view class='userinfo-iavatar'>
+        <image src="{{userInfo.iavatar}}" background-size="cover"></image> 
       </view>
+      <view class='post_top'>
+        <view class='name_time'>
+          <view class='nickname'>
+            <text>{{nickname.name}}</text> 
+          </view>
+          <view class='date'>
+            <text>{{format(post_detials.date)}}</text> 
+          </view>
+        </view>
+        <view class='like'>
+          <image class='like_img' src='/image/zan.png' wx:if="{{like_state == 0}}" bindtap='tolike' data-pid="{{post_detials[i].pid}}"></image> 
+          <image class='like_img' src='/image/zanhl.png' wx:if="{{like_state == 1}}" bindtap='dellike' data-pid="{{post_detials[i].pid}}"></image>
+          <text class='like_num' >{{likes.length}}</text>      
+        </view>
+        <view class='classify_img'>
+          <image src='/image/zrbb1.png'wx:if="{{post_detials.classify==0}}"></image>
+          <image src='/image/xwzl1.png'wx:if="{{post_detials.classify==1}}"></image>
+          <image src='/image/jytc1.png'wx:if="{{post_detials.classify==2}}"></image>
+          <image src='/image/wxzx1.png'wx:if="{{post_detials.classify==3}}"></image>
+        </view>
+      </view>
+      <view class='post_text'>
+        <text>{{post_detials.textwords}}</text> 
+      </view>
+      <!-- <image class='comment_img' src='/image/reply.png' bindtap='tocomment' data-pid="{{post_detials[i].pid}}"></image> -->
+      <!-- <text class='comment_num'>{{comment_num[i].c}}</text> -->
     </view>
-    <view wx:else></view>
-  </view>
-  <view class='show_comments'>
+
+    <view class='show_photo'>
+      <view wx:if="{{post_detials.textphoto}}">
+        <view class='post_textphoto'>
+          <image mode='widthFix' class='textphoto'src="{{post_detials.textphoto}}"      background-size="cover">
+          </image>
+        </view>
+      </view>
+      <view wx:else></view>
+    </view>
+    
     <view class='comments_number'>
-        <text class='tag'>用户评论({{comments.length}})</text>
-      </view>
-      <view class="comment_line"></view>
+      <text class='tag'>用户评论({{comments.length}})</text>
+    </view>
+
+    <view class='show_comments'>
       <view wx:if="{{comments.length}}">
         <block wx:for="{{comments}}" wx:key="index" wx:for-index="i">
+          <view class='comments'>
             <view class='post_avatar'>
               <image class='avatar' src='{{comments[i].iavatar}}'></image>
             </view>
-            <view class='post_words'>
-              <text class='nick_name' >{{comments[i].name}}</text>
-              <text class='textwords'>{{comments[i].text_comm}}</text>    
-              <text class='time'>{{format(comments[i].time)}}</text>
+            <view class='comment_right'>
+              <view class='nick_name'>
+                <text>{{comments[i].name}}</text>
+              </view>
+              <view class='time'>
+                <text>{{format(comments[i].time)}}</text> 
+              </view>
+              <view class='post_words'>
+                <text>{{comments[i].text_comm}}</text>    
+              </view>
             </view>
+          </view>
           <view class="comment_line"></view>
         </block>
       </view>
@@ -52,5 +78,5 @@
   <view class='make-topic' bindtap="toComment" data-pid="{{post_detials.pid}}">
     <image src='/image/edit.png'></image>
   </view>
- </scroll-view> 
+</scroll-view> 
 
