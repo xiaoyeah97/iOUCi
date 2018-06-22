@@ -11,6 +11,7 @@ Page({
     userInfo: {},
     post_detials: {},
     nickname: {},
+    post_classify:{}
     // comment_num: {},
     // like_num:{},
     //pid: ''
@@ -153,6 +154,22 @@ Page({
       }
     })
   },
+
+
+getClassify(c){
+  let post = this.data.post_detials
+  let post_classify
+  for (let item in post) {
+    if(post[item].classify==c){
+      post_classify[item]=post[item]
+    }
+  }
+  this.setData({
+    post_classify: post_classify
+  })
+  console.log(c)
+  console.log(this.data.post_classify)
+},
 
   /**
    * 生命周期函数--监听页面初次渲染完成

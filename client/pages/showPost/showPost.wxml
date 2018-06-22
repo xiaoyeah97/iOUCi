@@ -5,6 +5,10 @@
     <view class='user&words'>
       <image class="userinfo-iavatar" src="{{userInfo.iavatar}}" background-size="cover"></image>
       <text class='nickname'>{{nickname.name}}</text>
+      <image class='classify_img' src='/image/zrbb1.png'wx:if="{{post_detials.classify==0}}"></image>
+      <image class='classify_img' src='/image/xwzl1.png'wx:if="{{post_detials.classify==1}}"></image>
+      <image class='classify_img' src='/image/jytc1.png'wx:if="{{post_detials.classify==2}}"></image>
+      <image class='classify_img' src='/image/wxzx1.png'wx:if="{{post_detials.classify==3}}"></image>
       <text class='date'>{{format(post_detials.date)}}</text>
       <text class='post_text'>{{post_detials.textwords}}</text>
       <image class='comment_img' src='/image/reply.png' bindtap='tocomment' data-pid="{{post_detials[i].pid}}"></image>

@@ -1,5 +1,8 @@
 <wxs module='format' src='../../component/date.wxs' />
   <view class='post_main'>
+    <view class='choose_classify'>
+      <image></image>
+    </view>
       <block wx:for="{{post_detials}}" wx:key="index" wx:for-index="i">
         <view class='post' bindtap="toDetials" data-pid="{{post_detials[i].pid}}">
           <view class='post_avatar'>
