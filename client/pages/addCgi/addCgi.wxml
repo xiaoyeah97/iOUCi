@@ -14,7 +14,7 @@
     </view>
 
     <!-- 添加CGI指引 -->
-    <view class="guide">
+    <!-- <view class="guide">
         <text class="headline">快速添加CGI指引</text>
         <text class="p">1. 打开 server/routes/index.js 文件，添加如下语句：</text>
         <image class="image1" src="./code1.png" mode="aspectFit"></image>
@@ -24,6 +24,6 @@
         <button class="copyBtn" wx:if="{{canIUseClipboard}}" bindtap="copyCode" data-code-id="2">复制代码</button>
         <text class="p">3. 点击开发者工具右上角“腾讯云” - “上传测试代码”，勾选“智能上传”</text>
         <text class="p">4. 点击测试 CGI 按钮，即可看到结果</text>
-    </view>
+    </view> -->
 
 </view>
