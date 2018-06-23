@@ -1,0 +1,13 @@
+      <block wx:for="{{newComments}}" wx:key="index" wx:for-index="i">
+        <view class='post' bindtap="toDetials" data-pid="{{newComments[i].pid}}" data-cid="{{newComments[i].cid}}">
+          <view class='post_avatar'>
+            <image class='avatar' src='{{newComments[i].iavatar}}'></image>
+          </view>
+          <view class='post_words'>
+            <!-- <text class='nickname' >{{post_detials[i].name}}</text> -->
+            <text class='textwords'>{{newComments[i].textwords}}</text>
+            <text class='time'>{{format(newComments[i].time)}}</text>
+          </view>
+        </view>
+        <view class="comment_line"></view>
+      </block>

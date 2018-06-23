@@ -76,7 +76,7 @@ Page({
 
 
   inputtextwords: function (e) {
-    console.log(e.detail.value)
+    //console.log(e.detail.value)
     this.data.text_comm = e.detail.value
   }, 
   /**

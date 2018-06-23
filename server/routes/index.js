@@ -59,5 +59,8 @@ router.get('/getlike', controllers.getlike)
 router.get('/getAllLike', controllers.getAllLike)
 //GET 获取头像信息
 router.get('/getAvatar', controllers.getAvatar)
+//GET 获取新消息
+router.get('/getNewMessage', controllers.getNewMessage)
 router.post('/updateAvatar', controllers.updateAvatar)
+router.post('/setState', controllers.setState)
 module.exports = router

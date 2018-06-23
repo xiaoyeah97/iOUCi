@@ -66,6 +66,9 @@ var config = {
         getAvatarUrl: `${host}/weapp/getAvatar`,
 
         updateAvatarUrl: `${host}/weapp/updateAvatar`,
+        setStateUrl: `${host}/weapp/setState`,
+        //获取新消息
+        getNewMessageUrl: `${host}/weapp/getNewMessage`,
     }
 };
 

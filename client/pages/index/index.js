@@ -11,10 +11,8 @@ Page({
     userInfo: {},
     post_detials: {},
     nickname: {},
-    post_classify:{}
-    // comment_num: {},
-    // like_num:{},
-    //pid: ''
+    post_classify:{},
+    newComments:null
   },
   
   /**
@@ -34,6 +32,7 @@ Page({
   //   }
   // },
   onLoad: function (options) {
+    console.log(this.data.newComments)
     let uid
     if (app.globalData.userInfo) {
       uid = app.globalData.userInfo.uid
@@ -63,7 +62,11 @@ Page({
       },
     })
   },
-  refresh:function(){
+refresh:function(){
+  let uid
+  if (app.globalData.userInfo) {
+    uid = app.globalData.userInfo.uid
+  }
     wx.request({
       url: config.service.getAllPostUrl,
       method: 'get',
@@ -83,32 +86,28 @@ Page({
         })
       },
     })
+
+    wx.request({
+      url: config.service.getNewMessageUrl,
+      method:'get',
+      data:{
+        uid:uid
+      },
+      success: res => {
+        console.log(res)
+        if (res.data.data.comments.length!=0){        
+        this.setData({
+          newComments: res.data.data.comments
+        })}
+        }
+    })
   },
-  // },
-  // onPullDownRefresh: function (e) {
-  //   //wx.showNavigationBarLoading() //在标题栏中显示加载
-  //     console.log('下拉刷新')
-  //     wx.stopPullDownRefresh()
-  //     wx.request({
-  //       url: config.service.getAllPostUrl,
-  //       method: 'get',
-  //       // data: {
-  //       //   pid: this.data.pid,
-  //       // },
-  //       success: res => {
-  //         console.log(res)
-  //         //console.log(res.data.data.post_detials)
-  //         let data = res.data.data
-  //         for (let item in data.post_detials) {
-  //           data.post_detials[item].date = util.formatTime(new Date(data.post_detials[item].date))
-  //         }
-  //         console.log(data.post_detials.date)
-  //         this.setData({
-  //           post_detials: data.post_detials,
-  //         })
-  //       },
-  //     })
-  // },
+  toNewMessage:function(e){
+    
+    wx.navigateTo({
+      url: '../newMessage/newMessage',
+    })
+  },
 
   toDetials:function(e){
     let pid = e.currentTarget.dataset.pid
@@ -174,6 +173,9 @@ toclassify(e){
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    this.setData({
+      newComments: null
+    })
 
   },
 

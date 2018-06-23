@@ -103,7 +103,7 @@ Page({
   toComment: function (e) {
     let pid = e.currentTarget.dataset.pid
     console.log(pid)
-    wx.navigateTo({
+    wx.redirectTo({
       url: '../comment/comment?pid=' + pid + '&type=' + 0,
     })
   },

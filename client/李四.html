@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+</head>
+<body>
+    <div id="content"></div>
+
+    <script type="text/javascript">
+			//监听
+			var address="ws://localhost:8001";
+			ws=new WebSocket(address);
+			ws.onopen=function(e){
+				//ws.send("有新的连接");
+			};
+			//监听消息
+			ws.onmessage=function(e){
+				//字符串转对象			
+				var content=JSON.parse(e.data);
+				//如果消息是发给我的，就回应，否则丢弃
+				if(content.to=="李四"){
+					$("#content").append(content.content+"</br>");
+				}
+			};
+			ws.onerror=function(e){
+				alert(e.data);
+			};
+			ws.onclose=function(e){};
+	
+    </script>
+</body>
+</html>

@@ -1,6 +1,6 @@
-// pages/me/me.js
+// pages/newMessage/newMessage.js
 var config = require('../../config')
-
+var util = require('../../utils/util.js')
 const app = getApp()
 Page({
 
@@ -8,34 +8,52 @@ Page({
    * 页面的初始数据
    */
   data: {
-    userInfo: {}
+    newComments:{},
+    Comments_read:{}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
-  },
-
-  changeImg: function(e){
-    let gender = e.currentTarget.dataset.gender
-    wx.navigateTo({
-      url: '../chooseImg/chooseImg?gender=' + gender + '&type=' + 0,
+    let uid
+    if (app.globalData.userInfo) {
+      uid = app.globalData.userInfo.uid
+    }
+    wx.request({
+      url: config.service.getNewMessageUrl,
+      method: 'get',
+      data: {
+        uid: uid
+      },
+      success: res => {
+        console.log(res)
+        this.setData({
+          newComments: res.data.data.comments,
+          Comments_read: res.data.data.comments_read
+        })
+      }
     })
   },
-
-  tomypost:function(){
+  toDetials: function (e) {
+    let pid = e.currentTarget.dataset.pid
+    let cid = e.currentTarget.dataset.cid
+    console.log(pid)
+    console.log(cid)
+    wx.request({
+      url: config.service.setStateUrl,
+      method:'post',
+      data:{
+        cid:cid
+      },
+      success: res=>{
+      console.log(res)
+      }
+    })
     wx.navigateTo({
-      url: '../mypost/mypost',
+      url: '../showPost/showPost?pid=' + pid + '&type=' + 0,
     })
   },
-  tomycomment: function () {
-    wx.navigateTo({
-      url: '../mycomment/mycomment',
-    })
-  },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -47,12 +65,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    if (app.globalData.userInfo) {
-      //console.log(app.globalData.userInfo)
-      this.setData({
-        userInfo: app.globalData.userInfo
-      })
-    }
+  
   },
 
   /**
@@ -73,12 +86,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    if (app.globalData.userInfo) {
-      //console.log(app.globalData.userInfo)
-      this.setData({
-        userInfo: app.globalData.userInfo
-      })
-    }
+  
   },
 
   /**

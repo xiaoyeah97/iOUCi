@@ -4,8 +4,8 @@ module.exports = async ctx => {
   let classify = ctx.request.body.classify 
   let textwords = ctx.request.body.textwords 
   let textphoto = ctx.request.body.textphoto 
-  let content_num = ctx.request.body.content_num 
-  let like_num = ctx.request.body.like_num 
+  //let content_num = ctx.request.body.content_num 
+  //let like_num = ctx.request.body.like_num 
   let date = ctx.request.body.date ? ctx.request.body.date : ''
   let uid = ctx.request.body.uid ? ctx.request.body.uid : ''
   //let num = await mysql("nickname").count('nid')
@@ -19,8 +19,8 @@ module.exports = async ctx => {
       classify: classify,
       textwords: textwords,
       textphoto: textphoto,
-      content_num: content_num,
-      like_num: like_num,
+      //content_num: content_num,
+      //like_num: like_num,
       date: date,
       uid: uid,
       nid: nid

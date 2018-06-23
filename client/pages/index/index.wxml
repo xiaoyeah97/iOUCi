@@ -1,4 +1,8 @@
 <wxs module='format' src='../../component/date.wxs' />
+  <view class='newMessage' wx:if="{{newComments}}" bindtap='toNewMessage'>
+     <text>您有新的回复啦</text> 
+  </view>
+
   <view class='post_main'>
     <view class='choose_classify'>
       <!-- <image class='png' src='/image/all.png'></image> -->
