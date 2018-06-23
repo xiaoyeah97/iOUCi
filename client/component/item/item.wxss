@@ -4,6 +4,9 @@
   line-height: 70rpx;
   background: #fff;
 }
+.item text {
+  margin-left: 15rpx;
+}
 .arrow{
   width: 30rpx;
   height: 30rpx;
