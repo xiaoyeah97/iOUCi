@@ -11,13 +11,13 @@
     </view>
   </view>
   <view class='choose_border'>
-    <view class='choose'>
-      <text class='gender_text' bindtap='getboyGender'>男孩纸</text>
+    <view class='choose' bindtap='getboyGender'>
+      <text class='gender_text'>男孩纸</text>
       <image class='gender' src='/image/boy.png'></image> 
     </view>
     <view class='line'></view>
-    <view class='choose'>
-      <text class='gender_text' bindtap='getgirlGender'>女孩纸</text>
+    <view class='choose' bindtap='getgirlGender'>
+      <text class='gender_text'>女孩纸</text>
       <image class='gender' src='/image/girl.png' ></image>
     </view>
   </view>

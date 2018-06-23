@@ -23,7 +23,7 @@
   height: 150rpx;
   width: 100%;
   text-align: center;
-  font-size: 36rpx;
+  font-size: 32rpx;
   background-color: #FFF;
 }
 .choose_border {
