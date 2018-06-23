@@ -1,59 +1,49 @@
 <!--pages/post/post.wxml-->
 
 <view class='page_post'>
-<view>
-        <view class="weui-cells weui-cells_after-title">
-            <view class="weui-cell">
-                <view class="weui-cell__bd">
-                    <textarea class="weui-textarea" placeholder="请输入内容(●ˇ∀ˇ●)" style="height: 5.5em" bindinput="inputtextwords">
-                    </textarea>
-                    <!-- <view class="weui-textarea-counter">0/200</view> -->
-                </view>
-            </view>
-        </view>  
-</view>
-
-<!-- <view class="weui-cells__title">请选择分类</view> -->
-      <view class="weui-cells weui-cells_after-title">
-            <view class="weui-cell weui-cell_select">
-            <view class="weui-label">请选择分类</view>
-                <view class="weui-cell__bd">
-                    <picker bindchange="classifyPicker" value="{{index}}" range="{{classifyArray}}">
-                        <view class="weui-select">{{classifyArray[index]}}</view>
-                    </picker>
-                </view>
-            </view>
+  <view class='container'>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell">
+        <view class="weui-cell__bd">
+          <textarea class="weui-textarea" placeholder="请输入内容(●ˇ∀ˇ●)" style="height: 5.5em" bindinput="inputtextwords">
+          </textarea>
         </view>
+      </view>
+    </view>
 
- <view class="weui-uploader">
-                        <view class="weui-uploader__hd">
-                        </view>
-                        <view class="weui-uploader__bd">
-                            <view class="weui-uploader__files" id="uploaderFiles">
-                                <block wx:for="{{textphoto}}" wx:key="*this">
-                                  
-                                </block>
-                          <!-- <view class="weui-uploader__img" wx:if="{{textphoto}}">
-      <image
-          src="{{textphoto}}"
-          mode="aspectFill"
-          bindtap="previewImage">
-      </image>
-  </view> --><view class="weui-uploader__file" bindtap="previewImage" wx:if="{{textphoto}}">
-                                        <image class="weui-uploader__img" src="{{textphoto}}" mode="aspectFill" />
-                                    </view> 
-                            </view>
-                          <view wx:if="{{textphoto}}"></view>
-                          <view wx:else>
-                            <view class="weui-uploader__input-box">
-                                <view class="weui-uploader__input" bindtap="chooseImage"></view>
-                            </view>
-                          </view>
-                        </view>
-</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_select">
+        <view class="weui-label">请选择分类</view>
+        <view class="weui-cell__bd">
+          <picker bindchange="classifyPicker" value="{{index}}" range="{{classifyArray}}">
+            <view class="weui-select">{{classifyArray[index]}}</view>
+          </picker>
+        </view>
+      </view>
+    </view>
 
+    <view class="weui-uploader">
+      <view class="weui-uploader__hd"></view>
+      <view class="weui-uploader__bd">
+        <view class="weui-uploader__files" id="uploaderFiles">
+          <block wx:for="{{textphoto}}" wx:key="*this"></block>
+          <view class="weui-uploader__file" bindtap="previewImage" wx:if="{{textphoto}}">
+            <image class="weui-uploader__img" src="{{textphoto}}" mode="aspectFill" />
+          </view> 
+        </view>
+        <view wx:if="{{textphoto}}"></view>
+        <view wx:else>
+          <view class="weui-uploader__input-box">
+            <view class="weui-uploader__input" bindtap="chooseImage"></view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
 
-  <view class='info_classify'>
-   <button class='upload' bindtap='updatePost'>发布</button>
+  <view class='upload'>
+    <view>
+      <button class='btn' bindtap='updatePost'>发布</button>
+    </view>
   </view>
 </view>

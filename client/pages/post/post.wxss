@@ -1,15 +1,29 @@
 /* pages/post/post.wxss */
- .info_text{
-  width: 100%;
-  height: 100rpx;
+.page_post {
   display: flex;
-  background: #fff;
-  margin: 20rpx;
-} 
-.page_post{
-  margin:20rpx;
-  background: #fff;
+  flex-direction: column;
 }
-.upload{
-  background:#ffc59b;
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: #FFF;
+}
+.weui-label {
+  margin-left: 30rpx;
+}
+.weui-uploader__bd {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100rpx;
+  margin-top: 30rpx;
+} 
+.btn {
+  width: 500rpx;
+  background: #ffc59b;
 }
