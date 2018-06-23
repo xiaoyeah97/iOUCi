@@ -40,7 +40,5 @@
 }
 .update {
   width: 50%;
-  background-color: green;
-  color: #FFF;
-  
+  background-color: #ffc59b;
 }
