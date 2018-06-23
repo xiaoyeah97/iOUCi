@@ -38,6 +38,7 @@
   height: 60rpx;
   width: 50%;
   border: 5rpx solid green;
+  border-radius: 25rpx;
   padding: 10rpx 0;
 }
 .gender {
@@ -47,8 +48,8 @@
   height: 40rpx;
 }
 .line {
-  height: 1px;
-  background: #ECECEC;
+  height: 3px;
+  background: #FFF;
   width: 50%;
 }
 .empty {
