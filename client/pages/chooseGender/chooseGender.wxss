@@ -1,16 +1,60 @@
 /* pages/chooseGender/chooseGender.wxss */
-.choose{
-  text-align: center;
+.choose_gender {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.gender{
+.content1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 200rpx;
+  width: 100%;
+  margin-top: 150rpx;
+  text-align: center;
+  font-size: 36rpx;
+  font-weight: bold;
+  background-color: #FFF;
+}
+.content2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 150rpx;
+  width: 100%;
+  text-align: center;
+  font-size: 36rpx;
+  background-color: #FFF;
+}
+.choose_border {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: #FFF;
+}
+.choose {
+  text-align: center;
+  height: 60rpx;
+  width: 50%;
+  border: 5rpx solid green;
+  padding: 10rpx 0;
+}
+.gender {
   position: relative;
   left: 20rpx;
   width: 24rpx;
   height: 40rpx;
 }
-.line{
+.line {
   height: 1px;
-  background: #eee;
-  display: inline-block;
+  background: #ECECEC;
+  width: 50%;
+}
+.empty {
+  display: flex;
+  flex-direction: column;
+  background-color: #FFF;
+  height: 80rpx;
   width: 100%;
 }
