@@ -1,71 +1,114 @@
-.post{
-  width: 100%;
+.index {
   display: flex;
-  /* background: #fff; */
-  margin: 20rpx;
-  /* padding: 20rpx 10rpx; */
+  flex-direction: column;
+  background-color: #FFF;
 }
-.avatar{
+.newMessage {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 75rpx;
   width: 100%;
-  height: 100%;
+  background-color: #F3F3F3;
+  font-size: 32rpx;
+  color: #ADADAD;
+  text-align: center;
 }
-.post_avatar {
-    width: 100rpx;
-    height: 100rpx;
-    margin: 10rpx;
-    border-radius: 50%;
-    box-shadow: 0 0 0 1px #eee,
-    0 1px 2px 1px #efefef;
+.top {
+  display: flex;
+  flex-direction: row;
+  top: 30rpx;
+  position: relative;
 }
-.post_words{
-  width: 80%;
-  height: 100%;
-  margin: 5rpx;
-  /* background: #fff; */
-  /* padding: 10rpx 10rpx; */
+.classify {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  height: auto;
+  background-color: #FFF;
 }
-.nickname{
-  display: block;
+.classify_img {
+  margin: 0 auto;
+}
+.classify_img image {
+  width: 80rpx;
+  height: 80rpx;
+}
+.classify_text {
+  height: 45rpx;
+  margin: 10rpx auto 0; 
+  text-align: center; 
   font-size: 26rpx;
-  font-weight: 500rpx;
 }
-.textwords{
-  display: block;
-  font-size: 28rpx;
-  /* margin: 10rpx; */
-  /* padding: 10rpx 20rpx; */
-}
-.time{
-    position: absolute;
-    right: 30px;
-    display: inline-block; 
-    font-size: 26rpx;
-}
-.comment_line{
-  height: 1px;
-  background: #eee;
-  display: inline-block;
+.container {
+  display: flex;
+  flex-direction: column;
   width: 100%;
+  margin-top: 50rpx;
 }
-.comment_img{
-  position: relative;
-  top: 20rpx;
-  left: 20rpx;
-  width:42rpx;
-  height: 42rpx;
+.container_top {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100rpx;
+  width: 100%;
+  background-color: #F3F3F3;
+  text-align: center;
+  font-size: 32rpx;
+  color: #ADADAD;
 }
-.comment_num{
-  position: relative;
-  top: 8rpx;
-  left: 30rpx;
-  font-size: 25rpx;
+.post {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: auto;
+  margin-top: 10rpx;
 }
-.like_img{
+.post_avator {
+  width: 100rpx;
+  height: auto;
+  margin: 10rpx 10rpx 0;
+}
+.post_avator image {
+  width: 100rpx;
+  height: 100rpx;
+}
+.post_right {
+  display: flex;
+  flex-direction: column;
+  margin: 10rpx 10rpx;
+  height: auto;
+}
+.nickname {
+  height: 50rpx;
+  text-align: left;
+  font-size: 32rpx;
+  font-weight: 550;
+  color: #A9664A;
+}
+.time {
+  height: 50rpx;
+  text-align: left;
+  font-size: 24rpx;
+  color: #ADADAD;
+}
+.time text{
   position: relative;
-   top: 15rpx; 
-  left: 50rpx;
-  width:42rpx;
-  height: 42rpx;
+  top: 15rpx;
+}
+.content {
+  margin-top: 10rpx;
+  text-align: left;
+  font-size: 32rpx;
+}
+.line {
+  height: 1px;
+  background: #ECECEC;
+  width: 100%;
 }
 .make-topic {
 	position: fixed;
@@ -86,7 +129,6 @@
 	width: 50rpx;
 	height: 50rpx;
 }
-
 ::-webkit-scrollbar {
   width: 0;
   height: 0;

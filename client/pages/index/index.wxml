@@ -1,30 +1,75 @@
 <wxs module='format' src='../../component/date.wxs' />
+<view class='index'>
+
   <view class='newMessage' wx:if="{{newComments}}" bindtap='toNewMessage'>
-     <text>您有新的回复啦</text> 
+    <view>
+      <text>您有新的回复啦</text> 
+    </view>
   </view>
 
-  <view class='post_main'>
-    <view class='choose_classify'>
-      <!-- <image class='png' src='/image/all.png'></image> -->
-      <image class='png' src='/image/zrbb.png' bindtap="toclassify" data-classify="0"></image>
-      <image class='png' src='/image/xwzl.png' bindtap="toclassify" data-classify="1"></image>
-      <image class='png' src='/image/jytc.png' bindtap="toclassify" data-classify="2"></image>
-      <image class='png' src='/image/wxzx.png' bindtap="toclassify" data-classify="3"></image>
+  <view class='top'>
+    <view class='classify'>
+      <view class='classify_img'>
+        <image src='/image/zrbb.png' bindtap="toclassify" data-classify="0"></image>
+      </view>
+      <view class='classify_text'>
+        <text>找人/表白</text>
+      </view>
     </view>
-      <block wx:for="{{post_detials}}" wx:key="index" wx:for-index="i">
-        <view class='post' bindtap="toDetials" data-pid="{{post_detials[i].pid}}">
-          <view class='post_avatar'>
-            <image class='avatar' src='{{post_detials[i].iavatar}}'></image>
-          </view>
-          <view class='post_words'>
-            <text class='nickname' >{{post_detials[i].name}}</text>
-            <text class='textwords'>{{post_detials[i].textwords}}</text>
-            <text class='time'>{{format(post_detials[i].date)}}</text>
-          </view>
-        </view>
-        <view class="comment_line"></view>
-      </block>
-    <view class='make-topic' bindtap="refresh">
-      <image src='/image/f5.png'></image>
+    <view class='classify'>
+      <view class='classify_img'>
+        <image src='/image/xwzl.png' bindtap="toclassify" data-classify="1"></image>
+      </view>
+      <view class='classify_text'>
+        <text>寻物/招领</text>
+      </view>
+    </view>
+    <view class='classify'>
+      <view class='classify_img'>
+        <image src='/image/jytc.png' bindtap="toclassify" data-classify="2"></image>
+      </view>
+      <view class='classify_text'>
+        <text>建议/吐槽</text>
+      </view>
+    </view>
+    <view class='classify'>
+      <view class='classify_img'>
+        <image src='/image/wxzx.png' bindtap="toclassify" data-classify="3"></image>
+      </view>
+      <view class='classify_text'>
+        <text>问询/咨询</text>
+      </view>
     </view>
   </view>
+
+  <view class='container'>
+    <view class='container_top'>
+      <view>
+        <text>广场</text>
+      </view>
+    </view>
+    <block wx:for="{{post_detials}}" wx:key="index" wx:for-index="i">
+      <view class='post' bindtap="toDetials" data-pid="{{post_detials[i].pid}}">
+        <view class='post_avator'>
+          <image src='{{post_detials[i].iavatar}}'></image>
+        </view>
+        <view class='post_right'>
+          <view class='nickname'>
+            <text>{{post_detials[i].name}}</text>
+          </view>
+          <view class='time'>
+            <text>{{format(post_detials[i].date)}}</text>
+          </view>
+          <view class='content'>
+            <text>{{post_detials[i].textwords}}</text>
+          </view>
+        </view>
+      </view>
+      <view class='line'></view> 
+    </block>
+  </view>
+
+  <view class='make-topic' bindtap="refresh">
+    <image src='/image/f5.png'></image>
+  </view> 
+</view>
