@@ -1,72 +1,66 @@
 /* pages/postClassify/postClassify.wxss */
-.post{
-  width: 100%;
+.container {
   display: flex;
-  /* background: #fff; */
-  margin: 20rpx;
-  /* padding: 20rpx 10rpx; */
-}
-.avatar{
+  flex-direction: column;
   width: 100%;
-  height: 100%;
+  background-color: #FFF;
 }
-.post_avatar {
-    width: 100rpx;
-    height: 100rpx;
-    margin: 10rpx;
-    border-radius: 50%;
-    box-shadow: 0 0 0 1px #eee,
-    0 1px 2px 1px #efefef;
+.nopost {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 200rpx;
+  text-align: center;
 }
-.post_words{
-  width: 80%;
-  height: 100%;
-  margin: 5rpx;
-  /* background: #fff; */
-  /* padding: 10rpx 10rpx; */
+.post {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: auto;
+  margin-top: 10rpx;
 }
-.nickname{
-  display: block;
-  font-size: 26rpx;
-  font-weight: 500rpx;
+.post_avator {
+  width: 100rpx;
+  height: auto;
+  margin: 10rpx 10rpx 0;
 }
-.textwords{
-  display: block;
-  font-size: 28rpx;
-  /* margin: 10rpx; */
-  /* padding: 10rpx 20rpx; */
+.post_avator image {
+  width: 100rpx;
+  height: 100rpx;
 }
-.time{
-    position: absolute;
-    right: 30px;
-    display: inline-block; 
-    font-size: 26rpx;
+.post_right {
+  display: flex;
+  flex-direction: column;
+  margin: 10rpx 10rpx;
+  height: auto;
 }
-.comment_line{
+.nickname {
+  height: 50rpx;
+  text-align: left;
+  font-size: 32rpx;
+  font-weight: 550;
+  color: #A9664A;
+}
+.time {
+  height: 50rpx;
+  text-align: left;
+  font-size: 24rpx;
+  color: #ADADAD;
+}
+.time text{
+  position: relative;
+  top: 15rpx;
+}
+.content {
+  margin-top: 10rpx;
+  text-align: left;
+  font-size: 32rpx;
+}
+.line {
   height: 1px;
-  background: #eee;
-  display: inline-block;
+  background: #ECECEC;
   width: 100%;
-}
-.comment_img{
-  position: relative;
-  top: 20rpx;
-  left: 20rpx;
-  width:42rpx;
-  height: 42rpx;
-}
-.comment_num{
-  position: relative;
-  top: 8rpx;
-  left: 30rpx;
-  font-size: 25rpx;
-}
-.like_img{
-  position: relative;
-   top: 15rpx; 
-  left: 50rpx;
-  width:42rpx;
-  height: 42rpx;
 }
 .make-topic {
 	position: fixed;

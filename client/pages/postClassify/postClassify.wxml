@@ -1,21 +1,27 @@
 <wxs module='format' src='../../component/date.wxs' />
-  <view class='post_main'>
+  <view class='container'>
     <view class='nopost' wx:if="{{post_detials.length==0}}">
       <text class='nopost_words'>还没有帖子呢...你来发一个吧</text>  
     </view>
-      <block wx:for="{{post_detials}}" wx:key="index" wx:for-index="i">
-        <view class='post' bindtap="toDetials" data-pid="{{post_detials[i].pid}}">
-          <view class='post_avatar'>
-            <image class='avatar' src='{{post_detials[i].iavatar}}'></image>
+    <block wx:for="{{post_detials}}" wx:key="index" wx:for-index="i">
+      <view class='post' bindtap="toDetials" data-pid="{{post_detials[i].pid}}">
+        <view class='post_avator'>
+          <image src='{{post_detials[i].iavatar}}'></image>
+        </view>
+        <view class='post_right'>
+          <view class='nickname'>
+            <text>{{post_detials[i].name}}</text>
           </view>
-          <view class='post_words'>
-            <text class='nickname' >{{post_detials[i].name}}</text>
-            <text class='textwords'>{{post_detials[i].textwords}}</text>
-            <text class='time'>{{format(post_detials[i].date)}}</text>
+          <view class='time'>
+            <text>{{format(post_detials[i].date)}}</text>
+          </view>
+          <view class='content'>
+            <text>{{post_detials[i].textwords}}</text>
           </view>
         </view>
-        <view class="comment_line"></view>
-      </block>
+      </view>
+      <view class='line'></view>
+    </block>
     <view class='make-topic' bindtap="refresh">
       <image src='/image/f5.png'></image>
     </view>
