@@ -1,7 +1,14 @@
 <wxs module='format' src='../../component/date.wxs' />
   <view class='newMessage' wx:if="{{newComments}}" bindtap='toNewMessage'>
+<<<<<<< HEAD
      <text>您有新的回复啦</text> 
   </view>
+=======
+    <view>
+      <text>您有新的回复啦</text> 
+    </view>
+  </view> 
+>>>>>>> db08693ba9d07b0d5684695e71a8f162019f8861
 
 
   <button open-type="getUserInfo">获取用户信息</button>
