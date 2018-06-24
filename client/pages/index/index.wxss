@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   background-color: #FFF;
-}
+} 
 .newMessage {
   flex-shrink: 0;
   display: flex;
