@@ -1,13 +1,22 @@
-      <block wx:for="{{newComments}}" wx:key="index" wx:for-index="i">
-        <view class='post' bindtap="toDetials" data-pid="{{newComments[i].pid}}" data-cid="{{newComments[i].cid}}">
-          <view class='post_avatar'>
-            <image class='avatar' src='{{newComments[i].iavatar}}'></image>
-          </view>
-          <view class='post_words'>
-            <!-- <text class='nickname' >{{post_detials[i].name}}</text> -->
-            <text class='textwords'>{{newComments[i].textwords}}</text>
-            <text class='time'>{{format(newComments[i].time)}}</text>
-          </view>
+<wxs module='format' src='../../component/date.wxs' />
+<view class='container'>
+  <block wx:for="{{newComments}}" wx:key="index" wx:for-index="i">
+    <view class='comment' bindtap="toDetials" data-pid="{{newComments[i].pid}}" data-cid="{{newComments[i].cid}}">
+      <view class='comment_avatar'>
+        <image class='avatar' src='{{newComments[i].iavatar}}'></image>
+      </view>
+      <view class='comment_right'>
+        <view class='comment_nickname'>
+          <text>{{newComments[i].name}}</text>
         </view>
-        <view class="comment_line"></view>
-      </block>
+        <view class='comment_time'>
+          <text>{{format(newComments[i].time)}}</text>
+        </view>
+        <view class='comment_content'>
+          <text>{{newComments[i].textwords}}</text> 
+        </view>
+      </view>
+    </view>
+    <view class="line"></view>
+  </block>
+</view>
