@@ -12,9 +12,6 @@
         <view class='comment_time'>
           <text>{{format(newComments[i].time)}}</text>
         </view>
-        <view class='comment_content'>
-          <text>{{newComments[i].textwords}}</text> 
-        </view>
       </view>
     </view>
     <view class="line"></view>
