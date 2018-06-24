@@ -12,12 +12,12 @@
   height: auto;
   margin-top: 10rpx;
 }
-.comment_avator {
+.comment_avatar {
   width: 100rpx;
   height: auto;
   margin: 10rpx 10rpx 0;
 }
-.comment_avator image {
+.comment_avatar image {
   width: 100rpx;
   height: 100rpx;
 }
