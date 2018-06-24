@@ -30,7 +30,7 @@ Page({
         console.log(res)
         this.setData({
           newComments: res.data.data.comments,
-          Comments_read: res.data.data.comments_read
+          //Comments_read: res.data.data.comments_read
         })
       }
     })
