@@ -159,6 +159,11 @@ toclassify(e){
     url: '../postClassify/postClassify?classify=' + classify + '&type=' + 0,
   })
 },
+onGotUserInfo: function (e) {
+  console.log(e.detail.errMsg)
+  console.log(e.detail.userInfo)
+  console.log(e.detail.rawData)
+},
 
 
 
