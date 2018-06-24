@@ -204,6 +204,14 @@ Page({
       }
     })
   },
+
+  previewImage: function (e) {
+    //console.log(this.data.textphoto)
+    wx.previewImage({
+      current: e.currentTarget.id,
+      urls: [this.data.post_detials.textphoto]
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

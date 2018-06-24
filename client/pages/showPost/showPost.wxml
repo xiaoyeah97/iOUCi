@@ -34,7 +34,7 @@
       </view>
       <view wx:if="{{post_detials.textphoto}}">
         <view class='post_photo'>
-          <image mode='widthFix' src="{{post_detials.textphoto}}"      background-size="cover"></image>
+          <image mode='widthFix' src="{{post_detials.textphoto}}"      background-size="cover" bindtap="previewImage"></image>
         </view>
       </view>
       <view wx:else></view>
